@@ -5,11 +5,8 @@ from django.core.mail import send_mail
 from django.template import loader, RequestContext
 from django.http import HttpResponseRedirect
 
-def index(request):
-	return render_to_response('index.html',{})
-
-def log(request):
-	return render_to_response('log.html',{})
+def u_views(request,template_name):
+        return render_to_response(template_name)
 
 # def email(request):
 #     return render_to_response('email.html',{})
