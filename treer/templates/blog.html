@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}
+品阅
+{% endblock %}
+{% block style%}
+.b_body {
+    margin-left: auto;
+    margin-right: auto;
+    width:400px;
+
+}
+{% endblock %}
+{% block content %}
+{% for blog in blist %}
+    <div class="b_body">
+        <div class="b_title" style="text-align: center;"><h2>{{ blog.caption }}</a></div>
+            <div class="b_info">
+                <ul class="b_info_list">
+                    <li>分类:{{blog.category}}</li>
+                    <li>发表时间:{{ blog.publish_time|date:"Y-m-d H:i"}}</li>
+                    <li>标签:
+                        {% for tag in blog.tags.all %}
+                            {{tag.tag_name}}
+                            {%endfor%}
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="blog_content">
+                        {{ blog.content }}
+                    </div>
+                    <hr />
+                </div>
+                <script>
+document.getElementById('blog').className='active';
+                </script>
+                {% endfor %}
+{% endblock %}

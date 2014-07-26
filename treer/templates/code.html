@@ -1,0 +1,30 @@
+{% extends "base.html"%}
+
+{% block title %}
+酷码
+{% endblock %}
+
+{% block content %}
+{% for code in clist%}
+<div class="l_body">
+    <div class="l_title"><a href="/">{{code.caption}}</a></div>
+    <div class="l_info">
+        <ul class="l_info_list">
+            <li>语言:{{code.language}}</li>
+            <li>发表时间:{{ code.publish_time|date:"Y-m-d H:i"}}</li>
+            <li>标签:
+            {% for tag in code.tags.all %}
+            {{tag.tag_name}}
+            {%endfor%}
+            </li>
+        </ul>
+    </div>
+    <div class ="code_content">
+        {{ code.content }}
+    </div>
+</div>
+<script>
+document.getElementById('code').className='active';
+</script>
+{% endfor %}
+{% endblock%}
