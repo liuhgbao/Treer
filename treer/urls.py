@@ -7,7 +7,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
         url(r'^$', 'treer.views.u_views',{'template_name':'index.html'}),
         url(r'^log/$', 'treer.views.u_views',{'template_name':'log.html'}),
-        url(r'^contact/$', 'treer.views.contace'),
+        url(r'^contact/$', 'treer.views.contact'),
         url(r'^thanks/$', 'treer.views.thanks'),
         url(r'^blog/$', 'blog.views.blog_list', name='blog_list'),
         url(r'^code/$','blog.views.code_list',name='code_list'),
