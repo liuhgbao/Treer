@@ -23,7 +23,7 @@ sys.setdefaultencoding('utf-8')
 SECRET_KEY = '$o&emvii16h&%h8$xq=dngibw+hgm516^j6pz@v4^vk=5e^^vh'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 TEMPLATE_DEBUG = True
 
