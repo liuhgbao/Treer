@@ -11,7 +11,7 @@ urlpatterns = patterns('',
         url(r'^thanks/$', 'treer.views.thanks'),
         url(r'^blog/$', 'blog.views.blog_list', name='blog_list'),
         url(r'^code/$','blog.views.code_list',name='code_list'),
-        url(r'^member/$','treer.views.u_views',{'template_name':'member.html'}),
+        url(r'^member/$','blog.views.temp_list',name='temp_list'),
         url(r'^admin/', include(admin.site.urls)),
                        )
 from django.conf import settings

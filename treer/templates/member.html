@@ -6,9 +6,8 @@
 <script>
 document.getElementById('member').className='active';
 </script>
-<div class="panel panel-default">
-  <div class="panel-heading">成员介绍</div>
-
+<div class="panel panel-default" style="width: 60%;margin-left: auto;margin-right: auto;">
+<div class="panel-heading">成员介绍</div>
   <!-- Table -->
   <table class="table">
     <tr>
@@ -16,61 +15,13 @@ document.getElementById('member').className='active';
 	    <td>简介</td>
 	    <td>email</td>
 	  </tr>
+	  {% for member in tlist %}
 	  <tr>
-	    <td>Millyn</td>
-	    <td> </td>
-	    <td> </td>
+	    <td>{{ member.name }}</td>
+	    <td>{{ member.info }} </td>
+	    <td>{{ member.email }}</td>
 	  </tr>
-	  <tr>
-	    <td>BugOne</td>
-	    <td> </td>
-	    <td> </td>
-	  </tr>
-	  <tr>
-	    <td>陈无知</td>
-	    <td>以大多数人的努力程度，根本轮不到拼天赋。</td>
-	    <td>ayj1994@163.com</td>
-	  </tr>
-	  <tr>
-	    <td>Sunshine</td>
-	    <td> </td>
-	    <td> </td>
-	  </tr>
-	  <tr>
-	    <td>萧风</td>
-	    <td> </td>
-	    <td> </td>
-	  </tr>
-	  <tr>
-	    <td>WhyWhyNot</td>
-	    <td> </td>
-	    <td> </td>
-	  </tr>
-	  <tr>
-	    <td>Melodic</td>
-	    <td> </td>
-	    <td> </td>
-	  </tr>
-	  <tr>
-	    <td>丁攻子</td>
-	    <td> </td>
-	    <td> </td>
-	  </tr>
-	  <tr>
-	    <td>公子小白</td>
-	    <td> </td>
-	    <td> </td>
-	  </tr>
-	  <tr>
-	    <td>槛外人</td>
-	    <td> </td>
-	    <td> </td>
-	  </tr>
-	  <tr>
-	    <td>Rancho</td>
-	    <td> </td>
-	    <td> </td>
-	  </tr>
+	  {% endfor %}
   </table>
 </div>
 {% endblock %}
