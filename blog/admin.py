@@ -6,12 +6,14 @@ class AuthorAdmin(admin.ModelAdmin):
 	list_display = ('name','email','info')
 	search_fiels = ('name',)
 
+
 class ArticleAdmin(admin.ModelAdmin):
     list_display = ('caption', 'category', 'author', 'publish_time', 'update_time')
     list_filter = ('publish_time',)
     date_hierarchy = 'publish_time'
     ordering = ('-publish_time',)
     filter_horizontal = ('tags',)
+
 
 class WorksAdmin(admin.ModelAdmin):
     list_display = ('caption','language','author','publish_time','update_time','downloads')

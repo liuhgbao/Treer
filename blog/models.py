@@ -1,3 +1,4 @@
+# -*- conding: utf-8 -*-
 from django.db import models
 
 class Tag(models.Model):
@@ -14,11 +15,13 @@ class Category(models.Model):
 	def __unicode__(self):
 		return self.name
 
+
 class Language(models.Model):
 	name = models.CharField(max_length=30)
 
 	def __unicode__(self):
 		return self.name
+
 
 class Author(models.Model):
 	name = models.CharField(max_length=30)
@@ -28,6 +31,7 @@ class Author(models.Model):
 	def __unicode__(self):
 		return u'%s' % (self.name)
 
+
 class Article(models.Model):
 	caption = models.CharField(max_length=30)
 	publish_time = models.DateTimeField(auto_now_add=True)
@@ -36,6 +40,7 @@ class Article(models.Model):
 	category = models.ForeignKey(Category)
 	tags = models.ManyToManyField(Tag, blank=True)
 	content = models.TextField()
+
 
 class Works(models.Model):
 	caption = models.CharField(max_length=30)

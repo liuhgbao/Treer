@@ -8,6 +8,7 @@ from django.http import HttpResponseRedirect
 def u_views(request,template_name):
         return render_to_response(template_name)
 
+
 def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
@@ -25,11 +26,14 @@ def contact(request):
         form = ContactForm()
     return render_to_response('contact.html',locals(), context_instance=RequestContext(request))
 
+
 def thanks(request):
     return render_to_response('thanks.html',{})
 
+
 def error_404(request):
     return render_to_response('404.html',{})
+
 
 def error_500(request):
     return render_to_response('500.html',{})
