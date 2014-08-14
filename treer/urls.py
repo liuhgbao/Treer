@@ -6,6 +6,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
         url(r'^$', 'treer.views.u_views',{'template_name':'index.html'}),
         url(r'^log/$', 'treer.views.u_views',{'template_name':'log.html'}),
+        url(r'^booksshare/$','books.views.bs'),
         url(r'^contact/$', 'treer.views.contact'),
         url(r'^thanks/$', 'treer.views.thanks'),
         url(r'^blog/$', 'blog.views.blog_list', name='blog_list'),

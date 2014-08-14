@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'books',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -71,9 +72,9 @@ WSGI_APPLICATION = 'treer.wsgi.application'
 DATABASES = {
     'default' :{
         'ENGINE':'django.db.backends.mysql',
-        'NAME':'django',
+        'NAME':'cc',
         'USER':'root',
-        'PASSWORD':'123456',
+        'PASSWORD':'241994',
         'HOST':'127.0.0.1',
         'PORT':'',
     }

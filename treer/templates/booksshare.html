@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}
+书籍分享
+{% endblock %}
+{% block style %}
+div.pos_right
+{
+position:relative;
+left:2%
+}
+{% endblock %}
+{% block content %}
+<script>
+document.getElementById("booksshare").className="active";
+</script>
+<div class="row" >
+<div class="pos_right">
+{% for book in booklist %}
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="{{book.picaddress}}" alt="{{book.name}}">
+      <div class="caption">
+        <h3>{{book.name}}</h3>
+        <p>分享理由：{{book.sharereason}}</br>{{book.publication_date}}</br>{{book.bookman.all}}</br>{{ book.booktag.all }}</p>
+        <p><a href="{{book.download}}" class="btn btn-primary" role="button" target="_blank">下载地址</a> <a href="{{book.douban}}" class="btn btn-default" role="button" target="_blank">豆瓣书评</a></p>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+</div>
+</div>
+{% endblock %}
