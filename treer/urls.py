@@ -5,7 +5,7 @@ from django.contrib import admin
 admin.autodiscover()
 urlpatterns = patterns('',
         url(r'^$', 'treer.views.u_views',{'template_name':'index.html'}),
-        url(r'^log/$', 'treer.views.u_views',{'template_name':'log.html'}),
+        url(r'^log/$', 'blog.views.var_list',name='var_list'),
         url(r'^contact/$', 'treer.views.contact'),
         url(r'^thanks/$', 'treer.views.thanks'),
         url(r'^blog/$', 'blog.views.blog_list', name='blog_list'),
@@ -14,7 +14,7 @@ urlpatterns = patterns('',
         url(r'^admin/', include(admin.site.urls)),
                        )
 
-if settings.DEBUG is False:   
+if settings.DEBUG is False:
     urlpatterns += patterns('',
         url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {
             'document_root': settings.MEDIA_ROOT,

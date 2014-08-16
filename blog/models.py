@@ -32,6 +32,15 @@ class Author(models.Model):
 		return u'%s' % (self.name)
 
 
+class Var(models.Model):
+        title = models.CharField(max_length=50)
+        publish_time = models.DateField(auto_now_add=True)
+        var = models.CharField(max_length=10)
+
+        def __unicode__(self):
+                return self.title
+
+
 class Article(models.Model):
 	caption = models.CharField(max_length=30)
 	publish_time = models.DateTimeField(auto_now_add=True)
